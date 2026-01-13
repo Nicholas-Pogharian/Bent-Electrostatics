@@ -17,11 +17,19 @@ where $G(\vec{r},\vec{r_i})$ is the Green's function for the system. This can be
 
 $$\nabla^2 G(\vec{r},\vec{r_i}) = -\frac{4 \pi Q_i}{\epsilon_1L_xL_y} \delta (z-z_i) \sum_{\vec{m}=-\infty}^{\infty} e^{2 \pi i \left[\frac{m_x}{L_x}(x-x_i)+\frac{m_y}{L_y}(y-y_i)\right]}$$
 
-where $\vec{m}=(m_x,m_y)$.
+where $\vec{m}=(m_x,m_y)$. We solve this equation by assuming that, in general, $G(\vec{r},\vec{r_i})$ can be decomposed into $G(z,z_i)$ times $e^{2 \pi i \left[\frac{m_x}{L_x}(x-x_i)+\frac{m_y}{L_y}(y-y_i)\right]}$. We additionally perturb $G(\vec{r},\vec{r_i})$ in accordance with the interfacial perturbation, yielding
+
+$$G(\vec{r},\vec{r_i})=\frac{1}{L_xL_y} \sum_{\vec{m}=-\infty}^{\infty} \left(g_{\vec{m}}^{(0)}(z,z_i) + h(x,x_i,y,y_i)g_{\vec{m}}^{(1)}(z,z_i)\right) e^{2 \pi i \left[\frac{m_x}{L_x}(x-x_i)+\frac{m_y}{L_y}(y-y_i)\right]}$$
+
+This leads to simple differential equations at each order which can be solved using standard electrostatic boundary conditions (constant potential and normal displacement fields at the dielectric interface). The results of those computations are implemented in simulation code. To improve convergence, we decompose the electrostatic potential as $\phi_{total}=\phi_C+\phi_{pol}$ where $\phi_C$ represents the standard pairwise Coulomb contribution to the electrostatic potential, and $\phi_{pol}$ represents the component of the potential due to polarization. 
 
 ---
 ## Results and Conclusions
 
+Our simulations show that charges are repelled from these dielectric interfaces, and that this repulsion is stronger near local 'troughs' in the undulating surface than near local 'peaks'. As the magnitude of the repulsion scales with charge, asymmetric combinations of charge valences can lead to net charge densities near bent interfaces.
+
+
+
 ## Instructions
-Simulation specifications including simulation length, number and valence of particles, and particle sizes can be edited in 'main.c' To run simulations, compile 'main.c' and run from the command line. This requires one command line argument which denotes the run number you are performing.
+Simulation specifications including simulation length, number and valence of particles, and particle sizes can be edited in 'main.c' To run simulations, compile 'main.c' and run from the command line. The compile command is provided at the top of 'main.c' Running the code requires one command line argument which denotes the run number you are performing. Some folder names might need to be changed to write output files to desired destinations.
 

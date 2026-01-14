@@ -31,5 +31,5 @@ Our simulations show that charges are repelled from these dielectric interfaces,
 
 
 ## Instructions
-Simulation specifications including simulation length, number and valence of particles, and particle sizes can be edited in 'main.c' To run simulations, compile 'main.c' and run from the command line. The compile command is provided at the top of 'main.c' Running the code requires one command line argument which denotes the run number you are performing. Some folder names might need to be changed to write output files to desired destinations.
+Simulation specifications including simulation length, number and valence of particles, and particle sizes can be edited in 'main.c'. To run simulations, compile 'main.c' and run from the command line. The compile command is provided at the top of 'main.c'. Running the code requires one command line argument which denotes the run number you are performing. Some folder names might need to be changed to write output files to desired destinations.
 
